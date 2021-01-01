@@ -1,0 +1,44 @@
+open cmd
+type: cd {project folder name}
+type: django-admin startproject personal_portfolio
+type: python manage.py runserver
+copy URL generated - http://127.0.0.1:8000/
+localhost:8000
+
+once folder is created
+add "-project" to the top level folder name
+
+manage.py - never edit 
+db.sqlite3 (db not used in this website)
+
+open personal_portfolio subfolder
+
+in settings.py
+add 'blog', 'portfolio', to INSTALLED_APPS
+
+when working with images, install pillow
+close server ctrl+c
+type: pip install pillow
+
+type: python manage.py runserver
+ctrl+c
+type: python manage.py migrate
+type: python manage.py runserver
+ctrl+C
+type: python manage.py makemirgrations
+
+---
+create admin
+cmd
+type: python manage.py createsuperuser
+Username: admin
+Email: (optional)
+Password: django1234
+
+to change password:
+type: python manage.py changepassword
+enter username and new password
+
+ERROR: no such table
+type: manage.py migrate --run-syncdb
+
